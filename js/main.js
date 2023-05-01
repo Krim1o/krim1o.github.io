@@ -35,6 +35,7 @@ function loadBackground() {
 function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
   isGmod = true;
   setMapName(mapname);
+  setSteamID(steamid);
 }
 
 function DownloadingFile( fileName ) {
@@ -60,6 +61,10 @@ function SetFilesNeeded( needed ) {
 }
 // end gmod functions
 
+
+function setSteamID(steamid) {
+  $("#steamid").html(steamid);
+}
 
 function setStatus(status) {
   $("#status").html(status);
