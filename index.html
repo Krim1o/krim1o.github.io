@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расслабуха / Загрузка</title>
+    <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="js/lib/jquery-3.6.4.min.js"></script>
+    <script src="js/lib/jquery-backstrech.js"></script>
+    <script src="config.js"></script>
+    <script src="js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <nav class="animate__animated animate__backInDown">
+        <div id="announcement"></div>
+        <span>Вы заходите на сервер: <span id="title"></span></span>
+        <span id="steamid" class="font-extralight">STEAM:0:1:2203</span>
+    </nav>
+    <h1 id="title" class="m-4 text-3xl font-bold"></h1>
+    <div class="subtitle m-4 animate__animated animate__backInLeft">
+        <h2 id="map" class="text-3xl">gm_construct</h2>
+        <h2 id="status">Получение сведений о сервере...</h2>
+    </div>
+
+    <div id="music" class="m-4 animate__animated animate__backInUp">
+		Сейчас играет: <span id="music-name"></span>
+	</div>
+</body>
+</html>
