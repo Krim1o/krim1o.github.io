@@ -1,3 +1,21 @@
+function autoplay(i, list) {
+  var sound = new Howl({
+      src: [list[i]],
+      preload: true,
+      volume: config.musicVolume,
+      onplay: function () {
+          console.log('playing')
+      },
+      onend: function () {
+          if ((i + 1) == list.length) {
+              autoplay(0, list)
+          } else {
+              autoplay(i + 1, list)
+          }
+      }
+  })
+  sound.play();
+}
 
 isGmod = false;
 var downloadedFiles = 0;
@@ -90,6 +108,8 @@ $(function() {
   $.backstretch(config.backgroundImages, {duration: config.backgroundImagesDuration, fade: config.backgroundImagesFade});
 
   $("#overlay").css("background-color", "rgba(0,0,0,"+(config.bgDarkAmount/100)+")");
+
+  autoplay(0, config.musicFiles)
 })
 
 
@@ -98,13 +118,13 @@ setTimeout(function() {
     console.log("No Garry's mod testing..");
 
     GameDetails(
-      "Servername",
+      "top_server",
       "Serverurl",
-      "Mapname",
-      "Maxplayers",
-      "SteamID",
-      "Gamemode");
+      "gm_construct",
+      "32",
+      "STEAM_1:0:2281337",
+      "NedoRP");
 
-    setStatus("Testing..");
+    setStatus("Получение данных о сервере (нет)...");
   }
 }, 1000);
